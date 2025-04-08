@@ -4,10 +4,13 @@ from .models import User, Team, Activity, Leaderboard, Workout
 from .serializers import UserSerializer, TeamSerializer, ActivitySerializer, LeaderboardSerializer, WorkoutSerializer
 
 def api_root(request):
+    base_url = "https://mergington-octofit-8000.app.github.dev"
     return JsonResponse({
-        "message": "Welcome to the OctoFit API!",
-        "codespace_url": "https://psychic-memory-77q65qprvhp9xx-8000.app.github.dev",
-        "localhost_url": "http://localhost:8000"
+        "users": f"{base_url}/api/users/",
+        "teams": f"{base_url}/api/teams/",
+        "activities": f"{base_url}/api/activities/",
+        "leaderboard": f"{base_url}/api/leaderboard/",
+        "workouts": f"{base_url}/api/workouts/"
     })
 
 class UserViewSet(viewsets.ModelViewSet):
