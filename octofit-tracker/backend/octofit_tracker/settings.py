@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-ode+y=%j_g&li^#1rszx5ax6gv9$qb+!#^0p8t6es8np6hkg=&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["psychic-memory-77q65qprvhp9xx-8000.app.github.dev", "localhost"]
 
 
 # Application definition
@@ -130,3 +130,10 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Enable CORS for all origins
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Django REST framework settings
+REST_FRAMEWORK = {
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+    ]
+}
